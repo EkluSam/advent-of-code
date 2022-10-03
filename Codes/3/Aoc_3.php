@@ -28,7 +28,7 @@ $epsilonRate = array(12);
 // -------------  GammaRate ----------- //
 
 // loop that indicate the position of the bit we're counting
-for($x = 0;$x < 12;$x++){
+for($h = 0;$h < 12;$h++){
     // counter for the ones
     $onesCounter = 0;
     // counter for the zeros
@@ -36,7 +36,7 @@ for($x = 0;$x < 12;$x++){
 
     // for loop that counts how many times 1 is in the start of each lines
     for($i = 0;$i < count($input);$i++){
-        if(substr($input[$i],$x,1) == '1'){
+        if(substr($input[$i],$h,1) == '1'){
             $onesCounter++;
         }
         else{
@@ -45,24 +45,24 @@ for($x = 0;$x < 12;$x++){
     }
     
     if($onesCounter > $zerosCounter){
-        $gammaRate[$x] = 1;
+        $gammaRate[$h] = 1;
     }
     else{
-        $gammaRate[$x] = 0;
+        $gammaRate[$h] = 0;
     }
 }
 
 // ------------ EpsilonRate ---------- // 
 
 
-for($x = 0;$x < 12;$x++){
+for($h = 0;$h < 12;$h++){
     // counter for the ones (setting it to 0)
     $onesCounter = 0;
     // counter for the zeros (setting it to 0)
     $zerosCounter = 0; 
     // for loop that counts how many times 0 is in the start of each lines
     for($i = 0;$i < count($input);$i++){
-        if(substr($input[$i],$x,1) == '0'){
+        if(substr($input[$i],$h,1) == '0'){
             $onesCounter++;
         }
         else{
@@ -71,10 +71,10 @@ for($x = 0;$x < 12;$x++){
     }
     
     if($onesCounter > $zerosCounter){
-        $epsilonRate[$x] = 1;
+        $epsilonRate[$h] = 1;
     }
     else{
-        $epsilonRate[$x] = 0;
+        $epsilonRate[$h] = 0;
     }
 }
 
@@ -82,5 +82,39 @@ $gammaRateBinary = implode("",$gammaRate);
 $epsilonRateBinary = implode("",$epsilonRate);
 echo("first part" . bindec($gammaRateBinary)+bindec($epsilonRateBinary));
 
-// ------------------- 
+// ------------------- SECOND PART --------------------------- // 
+
+$arrOxygenNbs = array(count($input));
+
+
+for($h = 0;$h < 12;$h++){
+
+    // counter for the ones
+    $onesCounter = 0;
+    // counter for the zeros
+    $zerosCounter = 0;
+
+    for($i = 0;$i < count($input);$i++){
+        if(substr($input[$i],$h,1) == '1'){
+           $onesCounter++;
+        }
+        else{
+           $zerosCounter++;
+        }
+    }
+    
+    if($onesCounter > $zerosCounter){
+        for($j = 0; $j < count($arrOxygenNbs);$j++){
+            if(substr($input[$j],$h,1) == '1'){
+               $arrOxygenNbs[$j] =  $input[$j];
+            }
+        }
+    }
+    else{
+        
+    }
+}
+
+var_dump($arrOxygenNbs);
+
 ?>
