@@ -32,7 +32,7 @@ for($x = 0;$x < 12;$x++){
     $onesCounter = 0;
     // counter for the zeros
     $zerosCounter = 0;
-    
+
     // for loop that counts how many times 1 is in the start of each lines
     for($i = 0;$i < count($input);$i++){
         if(substr($input[$i],$x,1) == '1'){
@@ -53,13 +53,12 @@ for($x = 0;$x < 12;$x++){
 
 // ------------ EpsilonRate ---------- // 
 
-// counter for the ones (setting it to 0)
-$onesCounter = 0;
-// counter for the zeros (setting it to 0)
-$zerosCounter = 0; 
-
 
 for($x = 0;$x < 12;$x++){
+    // counter for the ones (setting it to 0)
+    $onesCounter = 0;
+    // counter for the zeros (setting it to 0)
+    $zerosCounter = 0; 
     // for loop that counts how many times 0 is in the start of each lines
     for($i = 0;$i < count($input);$i++){
         if(substr($input[$i],$x,1) == '0'){
@@ -80,6 +79,5 @@ for($x = 0;$x < 12;$x++){
 
 $gammaRateBinary = implode("",$gammaRate);
 $epsilonRateBinary = implode("",$epsilonRate);
-var_dump($input);
-var_dump($gammaRateBinary);
+echo(bindec($gammaRateBinary)+bindec($epsilonRateBinary));
 ?>
