@@ -1,6 +1,4 @@
-<?php
-
-/// Function who's purpose is to store all data into a defined array
+<?php 
 function getData($path)
 {
     $lines = [];
@@ -15,16 +13,15 @@ function getData($path)
     return $lines;
 }
 
-$count = 0;
-$lines = getData("input.txt");
 
-for($x = 0; $x < count($lines); $x++){
-    $a = $lines[$x] + $lines[$x+1] + $lines[$x+2];
-    $b = $lines[$x+1] + $lines[$x+2] + $lines[$x+3];
-    if($a < $b)
-    $count++;
+$input = getData("input.txt");
+
+$gammaRate = array(12);
+$epsilonRate = array(12);
+$onesCounter;
+$zerosCounter;
+
+for($i = 0;$i < count($input);$i++){
+
 }
-echo $count;
-
-
 ?>

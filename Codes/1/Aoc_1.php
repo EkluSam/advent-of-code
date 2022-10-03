@@ -17,7 +17,7 @@ function getData($path)
     return $lines;
 }
 $count = 0;
-$lines = getData("Aoc.txt");
+$lines = getData("input.txt");
 for($x = 1; $x < count($lines); $x++){
     if($lines[$x] > $lines[$x-1])
     $count++;
