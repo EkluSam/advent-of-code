@@ -84,8 +84,6 @@ echo("first part" . bindec($gammaRateBinary)+bindec($epsilonRateBinary));
 
 // ------------------- SECOND PART --------------------------- // 
 
-$arrOxygenNbs = array(count($input));
-
 
 for($h = 0;$h < 12;$h++){
 
@@ -102,16 +100,25 @@ for($h = 0;$h < 12;$h++){
            $zerosCounter++;
         }
     }
-    
     if($onesCounter > $zerosCounter){
-        for($j = 0; $j < count($arrOxygenNbs);$j++){
-            if(substr($input[$j],$h,1) == '1'){
-               $arrOxygenNbs[$j] =  $input[$j];
+        for($j = 0;$j < count($input);$j++){
+            if(substr($input[$i],$h,1) == '0'){
+               $input[$j] = null;
+            }
+            else{
+
             }
         }
     }
     else{
-        
+        for($k = 0;$k < count($input);$k++){
+            if(substr($input[$i],$h,1) == '1'){
+               $input[$k] = null;
+            }
+            else{
+
+            }
+        }
     }
 }
 
