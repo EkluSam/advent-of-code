@@ -92,36 +92,60 @@ for($h = 0;$h < 12;$h++){
     // counter for the zeros
     $zerosCounter = 0;
 
+    // Counter loop
     for($i = 0;$i < count($input);$i++){
-        if(substr($input[$i],$h,1) == '1'){
+        if(substr($input[$h],$h,1) == '1'){
            $onesCounter++;
         }
         else{
            $zerosCounter++;
         }
     }
+    
+    // if there's more ones than zeros replace all zeros by 2 (so i dont use them in the counter loop)
     if($onesCounter > $zerosCounter){
-        for($j = 0;$j < count($input);$j++){
+        for($i = 0;$i < count($input);$i++){
             if(substr($input[$i],$h,1) == '0'){
-               $input[$j] = null;
-            }
-            else{
-
+               $input[$i] = 2;
             }
         }
     }
-    else{
-        for($k = 0;$k < count($input);$k++){
-            if(substr($input[$i],$h,1) == '1'){
-               $input[$k] = null;
-            }
-            else{
-
+    // if there's an equal amount we take the zeros by default
+    elseif($onesCounter == $zerosCounter){
+        for($i = 0;$i < count($input);$i++){
+            if(substr($input[$i],$h,1) == '0'){
+               $input[$i] = 2;
             }
         }
+    }
+    // if there's more zeros than ones replace all ones by 2
+    else{
+        for($i = 0;$i < count($input);$i++){
+            if(substr($input[$i],$h,1) == '1'){
+               $input[$i] = 2;
+            }
+        }
+    }
+
+    // if there are equal numbers
+    if($zerosCounter == 0 && $onesCounter == 1){
+        for($i = 0;$i < count($input);$i++){
+            if(substr($input[$h],$h,1) == '1'){
+              $endOne = $input[$i];
+            }       
+        }
+        break;
+    }
+    elseif($zerosCounter == 1 && $onesCounter == 0){
+        for($i = 0;$i < count($input);$i++){
+            if(substr($input[$i],$h,1) == '0'){
+              $endTwo = $input[$i];
+            }       
+        }
+        break; 
     }
 }
+echo(bindec($endOne) . "  " . bindec($endTwo));
 
-var_dump($arrOxygenNbs);
 
 ?>
