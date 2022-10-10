@@ -14,7 +14,7 @@ function getData($path)
     return $lines;
 }
 
-
+const INPUTLENGTH = 12; 
 $input = getData("input.txt");
 
 // ------------------------------------ FIRST PART ----------------------------- //
@@ -88,6 +88,29 @@ echo("first part" . bindec($gammaRateBinary)+bindec($epsilonRateBinary));
 $onesCounter = 0;
 // counter for the zeros (setting it to 0)
 $zerosCounter = 0; 
+// bit position in the binary number
+
+
+for($bitPos = 0; $bitPos < INPUTLENGTH;$bitPos++){
+    // count ones and zeros in the current bit position
+    for($i = 0;$i < count($input);$i++){
+        if(substr($input[$i],$bitPos,1) == '1'){
+            $onesCounter++;
+        }
+        else{
+            $zerosCounter++;
+        }
+    }
+    for($i = 0;$i < count($input);$i++){
+        if(substr($input[$i],$bitPos,1) == '1'){
+            $onesCounter++;
+        }
+        else{
+            $zerosCounter++;
+        }
+    }
+}
+
 
 echo(bindec($endOne) . "  " . bindec($endTwo));
 
