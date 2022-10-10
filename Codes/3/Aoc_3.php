@@ -79,5 +79,7 @@ for($x = 0;$x < 12;$x++){
 
 $gammaRateBinary = implode("",$gammaRate);
 $epsilonRateBinary = implode("",$epsilonRate);
-echo(bindec($gammaRateBinary)+bindec($epsilonRateBinary));
+echo($gammaRateBinary . "  " . $epsilonRateBinary);
+echo("\n" . bindec($gammaRateBinary)*bindec($epsilonRateBinary));
+
 ?>
