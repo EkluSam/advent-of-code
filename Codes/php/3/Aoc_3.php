@@ -16,7 +16,7 @@ function getData($path)
 
 const INPUTLENGTH = 12; 
 $input = getData("input.txt");
-
+/*
 // ------------------------------------ FIRST PART ----------------------------- //
 // array of bits for the gammaRate
 $gammaRate = array(12);  
@@ -81,9 +81,11 @@ for($h = 0;$h < 12;$h++){
 $gammaRateBinary = implode("",$gammaRate);
 $epsilonRateBinary = implode("",$epsilonRate);
 echo("first part" . bindec($gammaRateBinary)+bindec($epsilonRateBinary));
+*/
 
 // ------------------- SECOND PART --------------------------- // 
 
+$oxygenGR = "";
 // counter for the ones (setting it to 0)
 $onesCounter = 0;
 // counter for the zeros (setting it to 0)
@@ -94,34 +96,45 @@ $zerosCounter = 0;
 for($bitPos = 0; $bitPos < INPUTLENGTH;$bitPos++){
     // count ones and zeros in the current bit position
     for($i = 0;$i < count($input);$i++){
-        if(substr($input[$i],$bitPos,1) == '1'){
-            $onesCounter++;
-        }
-        else{
-            $zerosCounter++;
-        }
+        if(isset($input[$i])){
+            if(substr($input[$i],$bitPos,1) == '1'){
+                $onesCounter++;
+            }
+            else{
+                $zerosCounter++;
+            }
+        }          
+    }
+    // when its the last number
+    if(count($input) == 1){
+        $oxygenGR = bindec($input[0]);
+        break;
     }
 
     if($onesCounter >= $zerosCounter){
         // get rid of all the inputs that have 0 in the current bit position
         for($i = 0;$i < count($input);$i++){
-            if(substr($input[$i],$bitPos,1) == '0'){
-               unset($input[$i]);
+            if(isset($input[$i])){
+                if(substr($input[$i],$bitPos,1) == '0'){
+                    unset($input[$i]);
+                }             
             }
         }
     }
     else{
         // get rid of all the undesired inputs that have 1 in the current bit position
         for($i = 0;$i < count($input);$i++){
-            if(substr($input[$i],$bitPos,1) == '1'){
-               unset($input[$i]);
+            if(isset($input[$i])){
+                if(substr($input[$i],$bitPos,1) == '1'){
+                    unset($input[$i]);
+                }             
             }
         }
     }
 }
 
 
-echo(bindec($endOne) . "  " . bindec($endTwo));
+echo($oxygenGR);
 
 
 ?>
