@@ -90,7 +90,7 @@ $onesCounter = 0;
 $zerosCounter = 0; 
 // bit position in the binary number
 
-
+// finding the oxygen generator rating
 for($bitPos = 0; $bitPos < INPUTLENGTH;$bitPos++){
     // count ones and zeros in the current bit position
     for($i = 0;$i < count($input);$i++){
@@ -101,12 +101,21 @@ for($bitPos = 0; $bitPos < INPUTLENGTH;$bitPos++){
             $zerosCounter++;
         }
     }
-    for($i = 0;$i < count($input);$i++){
-        if(substr($input[$i],$bitPos,1) == '1'){
-            $onesCounter++;
+
+    if($onesCounter >= $zerosCounter){
+        // get rid of all the inputs that have 0 in the current bit position
+        for($i = 0;$i < count($input);$i++){
+            if(substr($input[$i],$bitPos,1) == '0'){
+               unset($input[$i]);
+            }
         }
-        else{
-            $zerosCounter++;
+    }
+    else{
+        // get rid of all the undesired inputs that have 1 in the current bit position
+        for($i = 0;$i < count($input);$i++){
+            if(substr($input[$i],$bitPos,1) == '1'){
+               unset($input[$i]);
+            }
         }
     }
 }
