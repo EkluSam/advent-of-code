@@ -16,7 +16,7 @@ namespace aoc_day2
             string strInput = "";
             int total = 0;
 
-
+            // for each part, change the number added to the total
             for (int i = 0; i < lines.Length; i++)
             {
                 strInput = lines[i];
@@ -25,15 +25,15 @@ namespace aoc_day2
                 // possible outcomes against rock
                 if (strInput[0] == 'A' && strInput[2] == 'X')
                 {
-                    total += 4;    
+                    total += 3;    
                 }
                 if (strInput[0] == 'A' && strInput[2] == 'Y')
                 {
-                    total += 8;
+                    total += 4;
                 }
                 if (strInput[0] == 'A' && strInput[2] == 'Z')
                 {
-                    total += 3;
+                    total += 8;
                 }
 
                 // possible outcomes against paper
@@ -53,15 +53,15 @@ namespace aoc_day2
                 // possible outcomes against paper
                 if (strInput[0] == 'C' && strInput[2] == 'X')
                 {
-                    total += 7;
+                    total += 2;
                 }
                 if (strInput[0] == 'C' && strInput[2] == 'Y')
                 {
-                    total += 2;
+                    total += 6;
                 }
                 if (strInput[0] == 'C' && strInput[2] == 'Z')
                 {
-                    total += 6;
+                    total += 7;
                 }
 
             }
