@@ -1,0 +1,8 @@
+C:\Users\pn88doo\Documents\GitHub\advent-of-code\2022\day02\aoc_day2\aoc_day2\bin\Debug\aoc_day2.exe.config
+C:\Users\pn88doo\Documents\GitHub\advent-of-code\2022\day02\aoc_day2\aoc_day2\bin\Debug\aoc_day2.exe
+C:\Users\pn88doo\Documents\GitHub\advent-of-code\2022\day02\aoc_day2\aoc_day2\bin\Debug\aoc_day2.pdb
+C:\Users\pn88doo\Documents\GitHub\advent-of-code\2022\day02\aoc_day2\aoc_day2\obj\Debug\aoc_day2.csproj.AssemblyReference.cache
+C:\Users\pn88doo\Documents\GitHub\advent-of-code\2022\day02\aoc_day2\aoc_day2\obj\Debug\aoc_day2.csproj.SuggestedBindingRedirects.cache
+C:\Users\pn88doo\Documents\GitHub\advent-of-code\2022\day02\aoc_day2\aoc_day2\obj\Debug\aoc_day2.csproj.CoreCompileInputs.cache
+C:\Users\pn88doo\Documents\GitHub\advent-of-code\2022\day02\aoc_day2\aoc_day2\obj\Debug\aoc_day2.exe
+C:\Users\pn88doo\Documents\GitHub\advent-of-code\2022\day02\aoc_day2\aoc_day2\obj\Debug\aoc_day2.pdb
