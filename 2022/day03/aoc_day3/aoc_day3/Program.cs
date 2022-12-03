@@ -10,6 +10,7 @@ namespace aoc_day3
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
