@@ -24,7 +24,8 @@ namespace aoc_day3
             bool founded = false;
             int total = 0;
 
-            for(int i = 0; i < lines.Length; i++)
+            // idée faire un petit tableau qui contient un groupe de trois et faire a partir de la en l'updatant a chaque groupe
+            for(int i = 0; i < lines.Length; i+=3)
             {
                 temp = lines[i];
                 for (int j = 0;j < temp.Length; j++)
@@ -32,38 +33,46 @@ namespace aoc_day3
 
                     for (int k = 1; k < 3;k++)
                     {
-                        for(int q = 0; q < lines[i + k].Length; q++)
+                        for(int q = 0; q < lines[i + k].Length; q++) // probleme au troisième groupe il effectue un counter qu'il ne devrait pas faire
                         {
                             if (temp[j] == lines[i + k][q])
                             {
+
                                 counter++;
-                                if(counter == 2)
+                                // trouvé dans les deux chaine suivante
+                                if (counter == 2 && k == 2)
                                 {
-                                    commonLetters.Add(temp[j]);
                                     founded = true;
-                                    i += 2;
+                                    commonLetters.Add(temp[j]);
                                     break;
                                 }
+                                // trouvé que dans une chaine / ou pas mais c'est pas assez
                                 if (k == 2)
                                 {
                                     counter = 0;
                                     break;
                                 }
                             }
+                            if (counter == 1 && k == 1)
+                            {
+                                k++;
+                                q = 0;
+                            }
                         }
                         if (counter == 2 || k == 2)
-                        {
+                        {                           
                             break;
                         }
                     }
-                    if (counter == 2)
+                    if (counter == 2 || founded)
                     {
+                        founded = false;
                         counter = 0;
                         break;
                     }
                 }
             }
-
+            // first 
             //for (int i = 0; i < lines.Length;i++)
             //{
             //    firstHalf = lines[i].Substring(0, lines[i].Length/2);
