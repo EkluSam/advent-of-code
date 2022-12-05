@@ -1,0 +1,7 @@
+C:\Users\pn88doo\Documents\GitHub\advent-of-code\2022\day05\aoc_day5\aoc_day5\bin\Debug\aoc_day5.exe.config
+C:\Users\pn88doo\Documents\GitHub\advent-of-code\2022\day05\aoc_day5\aoc_day5\bin\Debug\aoc_day5.exe
+C:\Users\pn88doo\Documents\GitHub\advent-of-code\2022\day05\aoc_day5\aoc_day5\bin\Debug\aoc_day5.pdb
+C:\Users\pn88doo\Documents\GitHub\advent-of-code\2022\day05\aoc_day5\aoc_day5\obj\Debug\aoc_day5.csprojAssemblyReference.cache
+C:\Users\pn88doo\Documents\GitHub\advent-of-code\2022\day05\aoc_day5\aoc_day5\obj\Debug\aoc_day5.csproj.CoreCompileInputs.cache
+C:\Users\pn88doo\Documents\GitHub\advent-of-code\2022\day05\aoc_day5\aoc_day5\obj\Debug\aoc_day5.exe
+C:\Users\pn88doo\Documents\GitHub\advent-of-code\2022\day05\aoc_day5\aoc_day5\obj\Debug\aoc_day5.pdb
