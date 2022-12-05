@@ -34,21 +34,21 @@ namespace aoc_day3
                     counter = 0;
                     for (int k = 1; k < 3;k++)
                     {
-                        for(int q = 0; q < lines[i + k].Length; q++) // probleme au troisième groupe il effectue un counter qu'il ne devrait pas faire
+                        for(int q = 0; q < lines[i + k].Length; q++) 
                         {
-
+                            // if letter is found in the next lines
                             if (temp[j] == lines[i + k][q])
                             {
                                 
                                 counter++;
-                                // trouvé dans les deux chaine suivante
+                                // if letter is found in both next lines
                                 if (counter == 2 && k == 2)
                                 {
                                     founded = true;
                                     commonLetters.Add(temp[j]);
                                     break;
                                 }
-                                // trouvé que dans une chaine / ou pas mais c'est pas assez
+                                // if letter is found in the second next line we go to the next letter
                                 if (k == 2)
                                 {
                                     counter = 0;
@@ -58,7 +58,7 @@ namespace aoc_day3
                             if (counter == 1 && k == 1)
                             {
                                 k++;
-                                q = 0;
+                                q = -1;
                             }
                         }
                         if (counter == 2 || k == 2)
@@ -75,7 +75,7 @@ namespace aoc_day3
                     }
                 }
             }
-            // first 
+            // first part
             //for (int i = 0; i < lines.Length;i++)
             //{
             //    firstHalf = lines[i].Substring(0, lines[i].Length/2);
